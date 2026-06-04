@@ -72,6 +72,7 @@ import { ref } from "vue"
 import { useRouter } from "vue-router"
 import axios from "axios"
 import { useToast } from "vue-toastification"
+import api from "@/services/api"
 
 const router = useRouter()
 
@@ -87,8 +88,8 @@ const addCar = async () => {
   try {
     const token = localStorage.getItem("token")
 
-    await axios.post(
-      "http://localhost:5000/api/cars",
+    await api.post(
+      "/cars",
       {
         ownerName: ownerName.value,
         flatName: flatName.value,

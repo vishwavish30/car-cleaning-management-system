@@ -282,6 +282,7 @@ import {
   markPaymentReceived,
   getCurrentMonthPayments
 } from "../services/paymentService"
+import api from "@/services/api"
 
 const cars = ref([])
 const loading = ref(true)
@@ -330,8 +331,8 @@ const saveCar = async () => {
   try {
     const token = localStorage.getItem("token")
 
-    await axios.put(
-      `http://localhost:5000/api/cars/${selectedCar.value._id}`,
+    await api.put(
+      `/cars/${selectedCar.value._id}`,
       {
         ownerName: selectedCar.value.ownerName,
         phoneNumber: selectedCar.value.phoneNumber,
@@ -362,7 +363,7 @@ const deactivateCar = async (id) => {
     const token = localStorage.getItem("token")
 
     await axios.patch(
-      `http://localhost:5000/api/cars/deactivate/${id}`,
+      `/cars/deactivate/${id}`,
       {},
       {
         headers: {

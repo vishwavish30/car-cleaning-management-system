@@ -64,6 +64,7 @@
 <script setup>
 import { ref } from "vue"
 import axios from "axios"
+import api from "@/services/api"
 
 const name = ref("")
 const email = ref("")
@@ -71,8 +72,8 @@ const password = ref("")
 
 const registerWorker = async () => {
   try {
-    await axios.post(
-      "http://localhost:5000/api/auth/register",
+    await api.post(
+      "/auth/register",
       {
         name: name.value,
         email: email.value,

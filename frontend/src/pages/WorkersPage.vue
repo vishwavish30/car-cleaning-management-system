@@ -89,6 +89,7 @@ import { getWorkers } from "../services/workerService"
 import { useRouter } from "vue-router"
 import axios from "axios"
 import { useToast } from "vue-toastification"
+import api from "@/services/api"
 
 const workers = ref([])
 const loading = ref(true)
@@ -119,8 +120,8 @@ const deactivateWorker = async (id) => {
   try {
     const token = localStorage.getItem("token")
 
-    await axios.patch(
-      `http://localhost:5000/api/users/deactivate/${id}`,
+    await api.patch(
+      `/users/deactivate/${id}`,
       {},
       {
         headers: {

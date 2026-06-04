@@ -52,6 +52,7 @@ import { ref } from "vue"
 import { useRouter } from "vue-router"
 import axios from "axios"
 import { useToast } from "vue-toastification"
+import api from "@/services/api"
 
 const router = useRouter()
 const toast = useToast()
@@ -62,8 +63,8 @@ const showPassword = ref(false)
 
 const login = async () => {
   try {
-    const res = await axios.post(
-      "http://localhost:5000/api/auth/login",
+    const res = await api.post(
+      "/auth/login",
       {
         email: email.value,
         password: password.value,
