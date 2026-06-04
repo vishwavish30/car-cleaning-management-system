@@ -362,7 +362,7 @@ const deactivateCar = async (id) => {
   try {
     const token = localStorage.getItem("token")
 
-    await axios.patch(
+    await api.patch(
       `/cars/deactivate/${id}`,
       {},
       {
@@ -445,7 +445,7 @@ const fetchPaidCars = async () => {
       await getCurrentMonthPayments()
 
     paidCarIds.value = payments.map(
-      payment => String(payment.car)
+      payment => String(payment.car._id)
     )
 
     // console.log(
