@@ -165,6 +165,7 @@
             <button
               class="btn btn-edit flex-fill"
               @click="editCar(car)"
+              :disabled="!car.isActive"
             >
               ✏️ Edit
             </button>
@@ -371,6 +372,8 @@ const deactivateCar = async (id) => {
         },
       }
     )
+
+
 
     toast.success("Car Deactivated")
 

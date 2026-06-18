@@ -10,8 +10,15 @@
 
         <div class="col-md-6 col-xl-3">
           <div class="stat-card">
-            <h6>Total Cars</h6>
+            <h6>Active Cars</h6>
             <h2>{{ stats.totalCars }}</h2>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="stat-card">
+            <h6>Inactive  Cars</h6>
+            <h2>{{ stats.inactiveCars }}</h2>
           </div>
         </div>
 
