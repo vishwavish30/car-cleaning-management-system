@@ -5,6 +5,8 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 import Toast from "vue-toastification"
 import "vue-toastification/dist/index.css"
 
+import "./assets/toast.css"
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -15,6 +17,16 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-app.use(Toast)
+
+app.use(Toast, {
+  position: "top-center",
+  timeout: 2500,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  hideProgressBar: false,
+  maxToasts: 1,
+  newestOnTop: true,
+})
 
 app.mount('#app')

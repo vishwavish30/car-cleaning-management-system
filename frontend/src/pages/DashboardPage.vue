@@ -58,7 +58,25 @@
 
       </div>
 
-      <div class="row mt-4 g-4">
+      <div
+        v-if="role === 'admin'"
+        class="row mt-4 g-4"
+      >
+        <div class="col-lg-8">
+          <MonthlyRevenueChart
+            :monthlyRevenue="stats.monthlyRevenue"
+          />
+        </div>
+
+        <div class="col-lg-4">
+          <PaymentStatusChart
+            :paidCustomers="stats.paidCustomers"
+            :pendingPayments="stats.pendingPayments"
+          />
+        </div>
+      </div>
+
+      <!-- <div class="row mt-4 g-4">
         <div class="col-lg-8">
           <div class="content-card">
             <h5 class="mb-3">Today's Summary</h5>
@@ -107,7 +125,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
 
       <div class="row mt-4">
         <div class="col-12">
@@ -145,6 +163,10 @@ import { useRouter } from "vue-router";
 import { getTodaySummary, getTodayCleanedCars } from "../services/cleaningService";
 
 import { getPaymentSummary } from "../services/paymentService"
+
+import MonthlyRevenueChart from "../components/charts/MonthlyRevenueChart.vue"
+
+import PaymentStatusChart from "../components/charts/PaymentStatusChart.vue"
 
 const router = useRouter();
 

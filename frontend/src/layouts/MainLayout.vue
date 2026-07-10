@@ -93,15 +93,17 @@ const logout = () => {
 
 .sidebar {
   width: 250px;
+  height: 100vh;
 
   background: #141e30;
-
   padding: 25px;
-
   color: white;
 
   display: flex;
   flex-direction: column;
+
+  position: sticky;
+  top: 0;
 }
 
 .logo {
@@ -210,6 +212,8 @@ const logout = () => {
     z-index: 1000;
 
     transition: 0.3s;
+
+    overflow-y: auto;
   }
 
   .sidebar.active {

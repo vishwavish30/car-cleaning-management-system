@@ -1,6 +1,6 @@
 <template>
   <div class="add-car-page">
-    <div class="container py-5">
+    <div class="container form-container">
 
       <div class="form-card">
 
@@ -127,7 +127,7 @@ const addCar = async () => {
 
   border-radius: 20px;
 
-  padding: 30px;
+  padding: 24px;
 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
@@ -135,7 +135,7 @@ const addCar = async () => {
 }
 
 .form-control {
-  height: 50px;
+  height: 45px;
 
   border-radius: 12px;
 
@@ -161,4 +161,5 @@ const addCar = async () => {
   border-radius: 12px;
   font-weight: 600;
 }
+
 </style>
